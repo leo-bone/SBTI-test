@@ -738,207 +738,207 @@
 // ══════════════════════════════════════════════════════
 
 const TYPES = [
-  { code:'CTRL', name:'拿捏者', emoji:'🎯', quote:'"怎么样，被我拿捏了吧？"', desc:'你天生具有掌控感，是朋友圈里的老大哥。能感知他人情绪，并在不知不觉中引导局面朝你期望的方向发展。你不是控制狂，你只是"有品味"——对结果有强烈要求。', tags:['控制欲强','情商高','目标明确','懂人心'], dims:[70,80,60,75,65] },
-  { code:'MALO', name:'吗喽', emoji:'🐒', quote:'"人生是个副本，而我只是一只吗喽。"', desc:'你是最有共鸣感的打工人代表。用童真对抗内卷，用摆烂回应鸡汤。表面上在划水，实际上是在做情绪管理的高手。', tags:['摸鱼专家','低欲望','社会清醒','活在当下'], dims:[30,55,80,40,60] },
-  { code:'DEAD', name:'死者', emoji:'💀', quote:'"我，还活着吗？"', desc:'极度摆烂、但心底依然温柔的灵魂。你不是真的放弃，你只是在用"装死"保护自己免于受伤。偶尔会突然爆发惊人能量，然后继续归于平静。', tags:['战略摆烂','内核稳','懒惰外表','温柔内心'], dims:[20,40,90,30,50] },
-  { code:'SEXY', name:'尤物', emoji:'🔥', quote:'"您就是天生的尤物！"', desc:'自信是你最大的护盾，你对自己有充分的认知与接纳。不是自恋，而是自爱。你散发的魅力是真实的，因为来自内心的笃定。', tags:['极度自信','自我认同','魅力十足','不屑解释'], dims:[90,70,50,85,75] },
-  { code:'SHIT', name:'愤世者', emoji:'💢', quote:'"这个世界，构石一坨。"', desc:'嘴硬心软的典范。嘴上在骂世界一无是处，手上却默默把事情做好。你不是真的绝望，只是太期待这个世界变好。', tags:['嘴炮高手','行动派','真实不装','外冷内热'], dims:[60,45,70,65,55] },
-  { code:'FAKE', name:'伪人', emoji:'🤖', quote:'"已经，没有人类了。"', desc:'你擅长扮演"正常人"，游走于各种社交场合，但内心保持着自我的冷静距离。不是虚伪，而是保护机制——你只在信任的人面前脱下面具。', tags:['社交高手','善于伪装','情感隐藏','极少真心'], dims:[55,35,65,50,80] },
-  { code:'JOKE-R', name:'小丑', emoji:'🃏', quote:'"原来我们都是小丑。"', desc:'社交场上的气氛担当，用笑声掩盖心碎。你是朋友圈温暖的存在，总是先照顾他人情绪，却常常忘记自己也需要被关心。', tags:['气氛组长','共情力强','忽略自己','开心果'], dims:[65,80,55,60,85] },
-  { code:'ZZZZ', name:'装死者', emoji:'😴', quote:'"我没死，我只是在睡觉。"', desc:'擅长"战略性摆烂"的隐藏高手。平时无视消息、不接任何活，但Deadline前能爆发出惊人执行力，让人怀疑你一直在暗中蓄力。', tags:['表面摆烂','暗中努力','效率怪','截止日战神'], dims:[25,60,85,70,45] },
-  { code:'IMSB', name:'傻者', emoji:'🙃', quote:'"认真的么？我真的是傻逼么？"', desc:'极致内耗、自我PUA的选手。总在怀疑自己，但其实你有你自己的一套逻辑和坚持，只是还没找到出口。', tags:['过度自省','内耗体质','潜力无限','自我怀疑'], dims:[35,50,75,40,60] },
-  { code:'SOLO', name:'孤儿', emoji:'🌑', quote:'"我哭了，我怎么会是孤儿？"', desc:'独来独往，用冷漠保护自己。不是不喜欢人，而是受伤怕了。你的内心有无限温柔，只等待真正值得的人靠近。', tags:['独行侠','内心丰富','极度防御','慢热型'], dims:[40,30,80,45,35] },
-  { code:'DRUNK', name:'酒鬼', emoji:'🍺', quote:'"烈酒烧喉，不得不醉。"', desc:'你用酒精与世界和解。不是逃避，是另一种接纳——接纳自己无法控制的事，接纳世界的混乱，然后摇摇晃晃地继续走。', tags:['放纵派','人间清醒','哲学选手','今朝有酒'], dims:[50,65,60,55,70] },
-  { code:'BOSS', name:'领导者', emoji:'👑', quote:'"方向盘给我，我来开。"', desc:'天生的决策者。你对模糊感到不适，对执行充满热情。喜欢把事情推进，讨厌原地打转。你的自信来自实力，不是表演。', tags:['决策力强','执行派','不喜废话','天然领袖'], dims:[85,75,45,90,70] },
-  { code:'HHHH', name:'傻乐者', emoji:'😂', quote:'"哈哈哈哈哈哈。"', desc:'天然快乐机器。不是因为没烦恼，是因为烦恼来了也能哈哈哈带过。你的笑声有魔力，能让周围人都感到轻松。', tags:['快乐源泉','治愈系','情绪稳定','乐天派'], dims:[75,85,40,65,80] },
-  { code:'MUM', name:'妈妈', emoji:'🫶', quote:'"或许...我可以叫你妈妈吗....?"', desc:'爱操心的付出型人格。总在照顾别人，常常忘了给自己留空间。你的付出是真诚的，但记得，妈妈自己也需要被抱抱。', tags:['照顾型','无私奉献','情感链接','容易累'], dims:[60,90,50,55,85] },
-  { code:'FUCK', name:'草者', emoji:'😤', quote:'"操！这是什么人格？"', desc:'真实、直白、不装。遇到不爽的事直接开骂，但骂完了还是会帮你把事搞定。你是最真诚的那种人，只是包装有点粗糙。', tags:['直来直去','不装','真性情','爆发型'], dims:[45,55,65,60,50] },
-  { code:'THIN-K', name:'思考者', emoji:'🧠', quote:'"已深度思考100s。"', desc:'大脑永远在线，停不下来。你喜欢分析一切，包括分析自己为什么要分析。这既是天赋，也是折磨——你看得太深了。', tags:['过度分析','逻辑清晰','内心复杂','慢决策'], dims:[80,45,70,75,40] },
-  { code:'OJBK', name:'无所谓人', emoji:'🤷', quote:'"我说随便，是真的随便。"', desc:'真正的佛系，不是表演。你对结果有超强的接受度，既不强求也不失落。这种淡然不是冷漠，而是你找到了内心的平静。', tags:['真佛系','情绪稳定','随遇而安','不执著'], dims:[30,70,85,35,55] },
-  { code:'LOVE-R', name:'多情者', emoji:'💘', quote:'"爱意太满，现实显得有点贫瘠。"', desc:'你的心里装了太多情感，对人对事都能迅速产生共鸣。爱得深，伤得也深。但你依然选择继续爱——这才是最勇敢的事。', tags:['情感充沛','共情达人','易受伤','爱得投入'], dims:[65,95,50,60,75] },
-  { code:'POOR', name:'贫困者', emoji:'💸', quote:'"我穷，但我很专。"', desc:'囊中羞涩不影响你的精神富足。你有自己的坚守和骄傲，在不被理解的地方固执地发光。穷到极致，是一种清醒。', tags:['精神富足','物质清醒','专注自我','骨气硬'], dims:[40,60,75,50,45] },
-  { code:'IMFW', name:'废物', emoji:'🗑️', quote:'"我真的...是废物吗？"', desc:'你不是废物，你只是在错误的地方被评估了。你有自己的节奏，有自己的价值方式，只是还没被这个系统识别。继续摸索，答案在等你。', tags:['被低估的','自我怀疑','潜力隐藏','待激活'], dims:[25,40,80,30,55] },
+  { code:'CTRL', name:'拿捏者', emoji:'🎯', quote:"怎么样，被我拿捏了吧？", desc:`你天生具有掌控感，是朋友圈里的老大哥。能感知他人情绪，并在不知不觉中引导局面朝你期望的方向发展。你不是控制狂，你只是"有品味"——对结果有强烈要求。`, tags:['控制欲强','情商高','目标明确','懂人心'], dims:[70,80,60,75,65] },
+  { code:'MALO', name:'吗喽', emoji:'🐒', quote:"人生是个副本，而我只是一只吗喽。", desc:`你是最有共鸣感的打工人代表。用童真对抗内卷，用摆烂回应鸡汤。表面上在划水，实际上是在做情绪管理的高手。`, tags:['摸鱼专家','低欲望','社会清醒','活在当下'], dims:[30,55,80,40,60] },
+  { code:'DEAD', name:'死者', emoji:'💀', quote:"我，还活着吗？", desc:`极度摆烂、但心底依然温柔的灵魂。你不是真的放弃，你只是在用"装死"保护自己免于受伤。偶尔会突然爆发惊人能量，然后继续归于平静。`, tags:['战略摆烂','内核稳','懒惰外表','温柔内心'], dims:[20,40,90,30,50] },
+  { code:'SEXY', name:'尤物', emoji:'🔥', quote:"您就是天生的尤物！", desc:`自信是你最大的护盾，你对自己有充分的认知与接纳。不是自恋，而是自爱。你散发的魅力是真实的，因为来自内心的笃定。`, tags:['极度自信','自我认同','魅力十足','不屑解释'], dims:[90,70,50,85,75] },
+  { code:'SHIT', name:'愤世者', emoji:'💢', quote:"这个世界，构石一坨。", desc:`嘴硬心软的典范。嘴上在骂世界一无是处，手上却默默把事情做好。你不是真的绝望，只是太期待这个世界变好。`, tags:['嘴炮高手','行动派','真实不装','外冷内热'], dims:[60,45,70,65,55] },
+  { code:'FAKE', name:'伪人', emoji:'🤖', quote:"已经，没有人类了。", desc:`你擅长扮演"正常人"，游走于各种社交场合，但内心保持着自我的冷静距离。不是虚伪，而是保护机制——你只在信任的人面前脱下面具。`, tags:['社交高手','善于伪装','情感隐藏','极少真心'], dims:[55,35,65,50,80] },
+  { code:'JOKE-R', name:'小丑', emoji:'🃏', quote:"原来我们都是小丑。", desc:`社交场上的气氛担当，用笑声掩盖心碎。你是朋友圈温暖的存在，总是先照顾他人情绪，却常常忘记自己也需要被关心。`, tags:['气氛组长','共情力强','忽略自己','开心果'], dims:[65,80,55,60,85] },
+  { code:'ZZZZ', name:'装死者', emoji:'😴', quote:"我没死，我只是在睡觉。", desc:`擅长"战略性摆烂"的隐藏高手。平时无视消息、不接任何活，但Deadline前能爆发出惊人执行力，让人怀疑你一直在暗中蓄力。`, tags:['表面摆烂','暗中努力','效率怪','截止日战神'], dims:[25,60,85,70,45] },
+  { code:'IMSB', name:'傻者', emoji:'🙃', quote:"认真的么？我真的是傻逼么？", desc:`极致内耗、自我PUA的选手。总在怀疑自己，但其实你有你自己的一套逻辑和坚持，只是还没找到出口。`, tags:['过度自省','内耗体质','潜力无限','自我怀疑'], dims:[35,50,75,40,60] },
+  { code:'SOLO', name:'孤儿', emoji:'🌑', quote:"我哭了，我怎么会是孤儿？", desc:`独来独往，用冷漠保护自己。不是不喜欢人，而是受伤怕了。你的内心有无限温柔，只等待真正值得的人靠近。`, tags:['独行侠','内心丰富','极度防御','慢热型'], dims:[40,30,80,45,35] },
+  { code:'DRUNK', name:'酒鬼', emoji:'🍺', quote:"烈酒烧喉，不得不醉。", desc:`你用酒精与世界和解。不是逃避，是另一种接纳——接纳自己无法控制的事，接纳世界的混乱，然后摇摇晃晃地继续走。`, tags:['放纵派','人间清醒','哲学选手','今朝有酒'], dims:[50,65,60,55,70] },
+  { code:'BOSS', name:'领导者', emoji:'👑', quote:"方向盘给我，我来开。", desc:`天生的决策者。你对模糊感到不适，对执行充满热情。喜欢把事情推进，讨厌原地打转。你的自信来自实力，不是表演。`, tags:['决策力强','执行派','不喜废话','天然领袖'], dims:[85,75,45,90,70] },
+  { code:'HHHH', name:'傻乐者', emoji:'😂', quote:"哈哈哈哈哈哈。", desc:`天然快乐机器。不是因为没烦恼，是因为烦恼来了也能哈哈哈带过。你的笑声有魔力，能让周围人都感到轻松。`, tags:['快乐源泉','治愈系','情绪稳定','乐天派'], dims:[75,85,40,65,80] },
+  { code:'MUM', name:'妈妈', emoji:'🫶', quote:"或许...我可以叫你妈妈吗....?", desc:`爱操心的付出型人格。总在照顾别人，常常忘了给自己留空间。你的付出是真诚的，但记得，妈妈自己也需要被抱抱。`, tags:['照顾型','无私奉献','情感链接','容易累'], dims:[60,90,50,55,85] },
+  { code:'FUCK', name:'草者', emoji:'😤', quote:"操！这是什么人格？", desc:`真实、直白、不装。遇到不爽的事直接开骂，但骂完了还是会帮你把事搞定。你是最真诚的那种人，只是包装有点粗糙。`, tags:['直来直去','不装','真性情','爆发型'], dims:[45,55,65,60,50] },
+  { code:'THIN-K', name:'思考者', emoji:'🧠', quote:"已深度思考100s。", desc:`大脑永远在线，停不下来。你喜欢分析一切，包括分析自己为什么要分析。这既是天赋，也是折磨——你看得太深了。`, tags:['过度分析','逻辑清晰','内心复杂','慢决策'], dims:[80,45,70,75,40] },
+  { code:'OJBK', name:'无所谓人', emoji:'🤷', quote:"我说随便，是真的随便。", desc:`真正的佛系，不是表演。你对结果有超强的接受度，既不强求也不失落。这种淡然不是冷漠，而是你找到了内心的平静。`, tags:['真佛系','情绪稳定','随遇而安','不执著'], dims:[30,70,85,35,55] },
+  { code:'LOVE-R', name:'多情者', emoji:'💘', quote:"爱意太满，现实显得有点贫瘠。", desc:`你的心里装了太多情感，对人对事都能迅速产生共鸣。爱得深，伤得也深。但你依然选择继续爱——这才是最勇敢的事。`, tags:['情感充沛','共情达人','易受伤','爱得投入'], dims:[65,95,50,60,75] },
+  { code:'POOR', name:'贫困者', emoji:'💸', quote:"我穷，但我很专。", desc:`囊中羞涩不影响你的精神富足。你有自己的坚守和骄傲，在不被理解的地方固执地发光。穷到极致，是一种清醒。`, tags:['精神富足','物质清醒','专注自我','骨气硬'], dims:[40,60,75,50,45] },
+  { code:'IMFW', name:'废物', emoji:'🗑️', quote:"我真的...是废物吗？", desc:`你不是废物，你只是在错误的地方被评估了。你有自己的节奏，有自己的价值方式，只是还没被这个系统识别。继续摸索，答案在等你。`, tags:['被低估的','自我怀疑','潜力隐藏','待激活'], dims:[25,40,80,30,55] },
 ];
 
 const QUESTIONS = [
   {
-    text: "周末终于到了，你第一反应是？",
+    text: '周末终于到了，你第一反应是？',
     options: [
-      { text: "计划好行程，要充分利用每一分钟", scores: {ctrl:3, boss:2, gogo:2} },
-      { text: "躺平，什么都不想做，睁眼就到周一", scores: {dead:3, zzzz:3, malo:2} },
-      { text: "刷手机直到天亮，莫名其妙就熬夜了", scores: {drunk:2, malo:2, imsb:1} },
-      { text: "约朋友出去，谁不去就轰炸谁微信", scores: {joker:3, mum:2, lover:2} },
+      { text: '计划好行程，要充分利用每一分钟', scores: {ctrl:3, boss:2, gogo:2} },
+      { text: '躺平，什么都不想做，睁眼就到周一', scores: {dead:3, zzzz:3, malo:2} },
+      { text: '刷手机直到天亮，莫名其妙就熬夜了', scores: {drunk:2, malo:2, imsb:1} },
+      { text: '约朋友出去，谁不去就轰炸谁微信', scores: {joker:3, mum:2, lover:2} },
     ]
   },
   {
-    text: "你的好朋友跟你说："你最近有点变了。"你的第一反应？",
+    text: "你的好朋友跟你说：'你最近有点变了。'你的第一反应？",
     options: [
-      { text: "内心崩溃，反复回想自己哪里出了问题", scores: {imsb:3, dead:2, solo:2} },
-      { text: "淡定回一句："是吗？挺好的。"", scores: {ojbk:3, fake:2, thin:2} },
-      { text: "立刻追问是什么地方变了，要彻底搞清楚", scores: {ctrl:3, thin:2, boss:2} },
-      { text: "哈哈哈一笑而过，反正我就是这样", scores: {hhhh:3, fuck:2, ojbk:2} },
+      { text: '内心崩溃，反复回想自己哪里出了问题', scores: {imsb:3, dead:2, solo:2} },
+      { text: "淡定回一句：'是吗？挺好的。'", scores: {ojbk:3, fake:2, thin:2} },
+      { text: '立刻追问是什么地方变了，要彻底搞清楚', scores: {ctrl:3, thin:2, boss:2} },
+      { text: '哈哈哈一笑而过，反正我就是这样', scores: {hhhh:3, fuck:2, ojbk:2} },
     ]
   },
   {
-    text: "你去参加一个只认识主人的聚会，你会？",
+    text: '你去参加一个只认识主人的聚会，你会？',
     options: [
-      { text: "混进去找到几个聊得来的，全场如鱼得水", scores: {ctrl:2, sexy:3, joker:2} },
-      { text: "找个角落待着，和手机度过快乐时光", scores: {solo:3, dead:2, zzzz:2} },
-      { text: "装作认识很多人，内心OS：救命啊", scores: {fake:3, imsb:2, joker:2} },
-      { text: "直接跟主人说我不想来，被迫出席的", scores: {fuck:3, shit:2, dead:2} },
+      { text: '混进去找到几个聊得来的，全场如鱼得水', scores: {ctrl:2, sexy:3, joker:2} },
+      { text: '找个角落待着，和手机度过快乐时光', scores: {solo:3, dead:2, zzzz:2} },
+      { text: '装作认识很多人，内心OS：救命啊', scores: {fake:3, imsb:2, joker:2} },
+      { text: '直接跟主人说我不想来，被迫出席的', scores: {fuck:3, shit:2, dead:2} },
     ]
   },
   {
-    text: "你对"努力"这件事的看法是？",
+    text: "你对'努力'这件事的看法是？",
     options: [
-      { text: "努力是唯一的出路，拼了！", scores: {boss:3, ctrl:2, gogo:3} },
-      { text: "努力有用吗？又不是不知道这个世界怎么运转的", scores: {shit:3, fuck:2, dead:2} },
-      { text: "努力的方向比努力本身更重要，我在研究方向", scores: {thin:3, ctrl:2, boss:2} },
-      { text: "我努力过了，没用，那就躺着吧", scores: {malo:3, zzzz:3, imfw:2} },
+      { text: '努力是唯一的出路，拼了！', scores: {boss:3, ctrl:2, gogo:3} },
+      { text: '努力有用吗？又不是不知道这个世界怎么运转的', scores: {shit:3, fuck:2, dead:2} },
+      { text: '努力的方向比努力本身更重要，我在研究方向', scores: {thin:3, ctrl:2, boss:2} },
+      { text: '我努力过了，没用，那就躺着吧', scores: {malo:3, zzzz:3, imfw:2} },
     ]
   },
   {
-    text: "你最近一次哭是因为？",
+    text: '你最近一次哭是因为？',
     options: [
-      { text: "看视频被感动了，或者被什么触动了", scores: {lover:3, mum:2, joker:2} },
-      { text: "压力太大，崩了，就哭了", scores: {imsb:2, dead:2, imfw:2} },
-      { text: "我不记得上次哭是什么时候了", scores: {ctrl:2, boss:2, ojbk:2, fake:3} },
-      { text: "看到动物或者小孩，莫名眼眶红了", scores: {mum:3, lover:2, hhhh:2} },
+      { text: '看视频被感动了，或者被什么触动了', scores: {lover:3, mum:2, joker:2} },
+      { text: '压力太大，崩了，就哭了', scores: {imsb:2, dead:2, imfw:2} },
+      { text: '我不记得上次哭是什么时候了', scores: {ctrl:2, boss:2, ojbk:2, fake:3} },
+      { text: '看到动物或者小孩，莫名眼眶红了', scores: {mum:3, lover:2, hhhh:2} },
     ]
   },
   {
-    text: "你手机里未读消息通常有多少条？",
+    text: '你手机里未读消息通常有多少条？',
     options: [
-      { text: "0条，强迫症，必须清完", scores: {ctrl:3, boss:2, thin:2} },
-      { text: "随便，几十条也无所谓，能回的就回", scores: {ojbk:3, malo:2, zzzz:2} },
-      { text: "几百甚至上千，已经放弃了", scores: {dead:3, imfw:2, zzzz:3} },
-      { text: "看心情，重要的秒回，不重要的无限搁置", scores: {fake:2, ctrl:2, solo:2} },
+      { text: '0条，强迫症，必须清完', scores: {ctrl:3, boss:2, thin:2} },
+      { text: '随便，几十条也无所谓，能回的就回', scores: {ojbk:3, malo:2, zzzz:2} },
+      { text: '几百甚至上千，已经放弃了', scores: {dead:3, imfw:2, zzzz:3} },
+      { text: '看心情，重要的秒回，不重要的无限搁置', scores: {fake:2, ctrl:2, solo:2} },
     ]
   },
   {
-    text: "深夜睡不着，你在想什么？",
+    text: '深夜睡不着，你在想什么？',
     options: [
-      { text: "反复回想白天说过的话，觉得自己哪里讲错了", scores: {imsb:3, lover:2, thin:3} },
-      { text: "没想什么，就是睡不着，刷刷刷", scores: {malo:2, drunk:2, zzzz:2} },
-      { text: "规划明天、下周、下个月要做的事", scores: {boss:3, ctrl:3, gogo:2} },
-      { text: "人生的意义、宇宙的尽头、我为什么在这里", scores: {thin:3, shit:2, solo:2} },
+      { text: '反复回想白天说过的话，觉得自己哪里讲错了', scores: {imsb:3, lover:2, thin:3} },
+      { text: '没想什么，就是睡不着，刷刷刷', scores: {malo:2, drunk:2, zzzz:2} },
+      { text: '规划明天、下周、下个月要做的事', scores: {boss:3, ctrl:3, gogo:2} },
+      { text: '人生的意义、宇宙的尽头、我为什么在这里', scores: {thin:3, shit:2, solo:2} },
     ]
   },
   {
-    text: "有人当众批评你，你会？",
+    text: '有人当众批评你，你会？',
     options: [
-      { text: "立刻回击，不管在哪儿，当场锤回去", scores: {fuck:3, shit:3, boss:2} },
-      { text: "表面沉默，回去复盘一百遍，在心里骂到明天", scores: {fake:3, imsb:2, thin:2} },
-      { text: "觉得ta有没有道理，有道理就接受，没有就无视", scores: {ctrl:2, ojbk:3, boss:2} },
-      { text: "瞬间心跳加速，想找个地洞钻进去", scores: {imsb:3, solo:2, imfw:2} },
+      { text: '立刻回击，不管在哪儿，当场锤回去', scores: {fuck:3, shit:3, boss:2} },
+      { text: '表面沉默，回去复盘一百遍，在心里骂到明天', scores: {fake:3, imsb:2, thin:2} },
+      { text: '觉得ta有没有道理，有道理就接受，没有就无视', scores: {ctrl:2, ojbk:3, boss:2} },
+      { text: '瞬间心跳加速，想找个地洞钻进去', scores: {imsb:3, solo:2, imfw:2} },
     ]
   },
   {
-    text: "你觉得自己的社交状态是？",
+    text: '你觉得自己的社交状态是？',
     options: [
-      { text: "社牛，走到哪里都能混得开", scores: {sexy:3, joker:3, ctrl:2} },
-      { text: "社恐，能不出门就不出门", scores: {solo:3, dead:2, zzzz:2} },
-      { text: "表面社牛，内心社恐，靠演技支撑", scores: {fake:3, joker:2, ctrl:2} },
-      { text: "看对象，遇到对的人话匣子根本关不上", scores: {lover:3, hhhh:2, mum:2} },
+      { text: '社牛，走到哪里都能混得开', scores: {sexy:3, joker:3, ctrl:2} },
+      { text: '社恐，能不出门就不出门', scores: {solo:3, dead:2, zzzz:2} },
+      { text: '表面社牛，内心社恐，靠演技支撑', scores: {fake:3, joker:2, ctrl:2} },
+      { text: '看对象，遇到对的人话匣子根本关不上', scores: {lover:3, hhhh:2, mum:2} },
     ]
   },
   {
-    text: "你对钱的态度是？",
+    text: '你对钱的态度是？',
     options: [
-      { text: "要挣大钱，目标明确，我会成功的", scores: {boss:3, ctrl:3, gogo:2} },
-      { text: "够花就行，精神富足比物质更重要", scores: {poor:3, monk:3, ojbk:2} },
-      { text: "钱？什么钱？我怎么又没有了", scores: {poor:2, imfw:2, malo:2} },
-      { text: "努力挣钱，然后随便花，人间值得", scores: {drunk:2, hhhh:2, lover:2} },
+      { text: '要挣大钱，目标明确，我会成功的', scores: {boss:3, ctrl:3, gogo:2} },
+      { text: '够花就行，精神富足比物质更重要', scores: {poor:3, monk:3, ojbk:2} },
+      { text: '钱？什么钱？我怎么又没有了', scores: {poor:2, imfw:2, malo:2} },
+      { text: '努力挣钱，然后随便花，人间值得', scores: {drunk:2, hhhh:2, lover:2} },
     ]
   },
   {
-    text: "面对一件很困难的任务，你通常？",
+    text: '面对一件很困难的任务，你通常？',
     options: [
-      { text: "直接开干，边做边解决问题", scores: {boss:3, gogo:3, fuck:2} },
-      { text: "先拖着，Deadline前神奇地搞完", scores: {zzzz:3, malo:2, dead:2} },
-      { text: "分析、拆解、计划，然后开始执行", scores: {thin:3, ctrl:3, boss:2} },
-      { text: "内心崩溃，表示做不了，然后哭着做完了", scores: {imsb:3, imfw:2, joker:2} },
+      { text: '直接开干，边做边解决问题', scores: {boss:3, gogo:3, fuck:2} },
+      { text: '先拖着，Deadline前神奇地搞完', scores: {zzzz:3, malo:2, dead:2} },
+      { text: '分析、拆解、计划，然后开始执行', scores: {thin:3, ctrl:3, boss:2} },
+      { text: '内心崩溃，表示做不了，然后哭着做完了', scores: {imsb:3, imfw:2, joker:2} },
     ]
   },
   {
-    text: "有人说你"很自恋"，你的反应？",
+    text: "有人说你'很自恋'，你的反应？",
     options: [
-      { text: "才不自恋，我只是清楚自己的价值", scores: {sexy:3, ctrl:2, boss:2} },
-      { text: "是吗？那我得反省一下", scores: {imsb:3, thin:2, lover:2} },
-      { text: "哈，说得对啊，爱自己有错吗？", scores: {sexy:3, hhhh:2, fuck:2} },
-      { text: "这种话随便说说，我无所谓", scores: {ojbk:3, fake:2, dead:2} },
+      { text: '才不自恋，我只是清楚自己的价值', scores: {sexy:3, ctrl:2, boss:2} },
+      { text: '是吗？那我得反省一下', scores: {imsb:3, thin:2, lover:2} },
+      { text: '哈，说得对啊，爱自己有错吗？', scores: {sexy:3, hhhh:2, fuck:2} },
+      { text: '这种话随便说说，我无所谓', scores: {ojbk:3, fake:2, dead:2} },
     ]
   },
   {
-    text: "你对"放弃"的看法？",
+    text: "你对'放弃'的看法？",
     options: [
-      { text: "永不放弃，坚持就是胜利", scores: {boss:3, gogo:3, ctrl:2} },
-      { text: "及时止损也是一种智慧", scores: {thin:3, ojbk:2, ctrl:2} },
-      { text: "其实我已经放弃很多次了，现在也还在放弃中", scores: {malo:3, dead:3, imfw:2} },
-      { text: "放弃这件事我研究了很久，结论是没有结论", scores: {thin:2, imsb:2, zzzz:2} },
+      { text: '永不放弃，坚持就是胜利', scores: {boss:3, gogo:3, ctrl:2} },
+      { text: '及时止损也是一种智慧', scores: {thin:3, ojbk:2, ctrl:2} },
+      { text: '其实我已经放弃很多次了，现在也还在放弃中', scores: {malo:3, dead:3, imfw:2} },
+      { text: '放弃这件事我研究了很久，结论是没有结论', scores: {thin:2, imsb:2, zzzz:2} },
     ]
   },
   {
-    text: "你最真实的内心独白是？",
+    text: '你最真实的内心独白是？',
     options: [
-      { text: "我能行的，只要我想，我一定能做到", scores: {boss:3, sexy:3, ctrl:2} },
-      { text: "算了吧，这世界就这样，躺了", scores: {malo:3, dead:3, shit:2} },
-      { text: "我到底是个什么玩意儿……", scores: {imsb:3, imfw:2, solo:2} },
-      { text: "今天也努力活着，明天再说明天的事", scores: {hhhh:2, ojbk:3, lover:2} },
+      { text: '我能行的，只要我想，我一定能做到', scores: {boss:3, sexy:3, ctrl:2} },
+      { text: '算了吧，这世界就这样，躺了', scores: {malo:3, dead:3, shit:2} },
+      { text: '我到底是个什么玩意儿……', scores: {imsb:3, imfw:2, solo:2} },
+      { text: '今天也努力活着，明天再说明天的事', scores: {hhhh:2, ojbk:3, lover:2} },
     ]
   },
   {
-    text: "当你帮了朋友一个大忙，朋友只说了句"谢谢"，你？",
+    text: "当你帮了朋友一个大忙，朋友只说了句'谢谢'，你？",
     options: [
-      { text: "内心默默记账，等有机会让他还回来", scores: {ctrl:3, shit:2, boss:2} },
-      { text: "没关系，举手之劳，朋友就是这样的", scores: {mum:3, hhhh:2, ojbk:2} },
-      { text: "有点失落，但不会说出来，默默消化", scores: {imsb:2, lover:2, fake:3} },
-      { text: "就应该多谢几句吧！小气！", scores: {fuck:3, shit:3, joker:2} },
+      { text: '内心默默记账，等有机会让他还回来', scores: {ctrl:3, shit:2, boss:2} },
+      { text: '没关系，举手之劳，朋友就是这样的', scores: {mum:3, hhhh:2, ojbk:2} },
+      { text: '有点失落，但不会说出来，默默消化', scores: {imsb:2, lover:2, fake:3} },
+      { text: '就应该多谢几句吧！小气！', scores: {fuck:3, shit:3, joker:2} },
     ]
   },
   {
-    text: "你通常用什么来对抗压力？",
+    text: '你通常用什么来对抗压力？',
     options: [
-      { text: "运动、行动，把压力转化为执行力", scores: {boss:3, gogo:3, ctrl:2} },
-      { text: "睡觉、躺着、装死，等压力自己走", scores: {dead:3, zzzz:3, malo:2} },
-      { text: "找朋友倾诉，或者找陌生人发泄", scores: {joker:2, lover:2, fuck:2} },
-      { text: "喝点东西，发呆，或者买东西", scores: {drunk:3, malo:2, poor:2} },
+      { text: '运动、行动，把压力转化为执行力', scores: {boss:3, gogo:3, ctrl:2} },
+      { text: '睡觉、躺着、装死，等压力自己走', scores: {dead:3, zzzz:3, malo:2} },
+      { text: '找朋友倾诉，或者找陌生人发泄', scores: {joker:2, lover:2, fuck:2} },
+      { text: '喝点东西，发呆，或者买东西', scores: {drunk:3, malo:2, poor:2} },
     ]
   },
   {
-    text: "你如何看待「命运」这件事？",
+    text: '你如何看待「命运」这件事？',
     options: [
-      { text: "命运是自己创造的，我不信命", scores: {boss:3, ctrl:3, gogo:2} },
-      { text: "命运是条河，我是那条鱼，游哪算哪", scores: {ojbk:3, malo:2, drunk:2} },
-      { text: "命运这东西太玄，但感觉我的命挺差的", scores: {imfw:3, dead:2, imsb:2} },
-      { text: "我反复想过这个问题，暂时没有结论", scores: {thin:3, solo:2, monk:3} },
+      { text: '命运是自己创造的，我不信命', scores: {boss:3, ctrl:3, gogo:2} },
+      { text: '命运是条河，我是那条鱼，游哪算哪', scores: {ojbk:3, malo:2, drunk:2} },
+      { text: '命运这东西太玄，但感觉我的命挺差的', scores: {imfw:3, dead:2, imsb:2} },
+      { text: '我反复想过这个问题，暂时没有结论', scores: {thin:3, solo:2, monk:3} },
     ]
   },
   {
-    text: "你最怕别人发现你的哪一面？",
+    text: '你最怕别人发现你的哪一面？',
     options: [
-      { text: "脆弱的一面，我不想被人看到我的软弱", scores: {ctrl:3, boss:2, fake:3} },
-      { text: "懒的一面，表面勤快，实际上…", scores: {zzzz:3, malo:2, fake:2} },
-      { text: "在乎的一面，我装作什么都无所谓但其实非常在意", scores: {fake:3, solo:3, imsb:2} },
-      { text: "无所谓，我基本上没有什么不敢被看见的", scores: {sexy:3, fuck:2, hhhh:2} },
+      { text: '脆弱的一面，我不想被人看到我的软弱', scores: {ctrl:3, boss:2, fake:3} },
+      { text: '懒的一面，表面勤快，实际上…', scores: {zzzz:3, malo:2, fake:2} },
+      { text: '在乎的一面，我装作什么都无所谓但其实非常在意', scores: {fake:3, solo:3, imsb:2} },
+      { text: '无所谓，我基本上没有什么不敢被看见的', scores: {sexy:3, fuck:2, hhhh:2} },
     ]
   },
   {
-    text: "如果你的人生是一部电影，片名会是？",
+    text: '如果你的人生是一部电影，片名会是？',
     options: [
-      { text: "《征服》——我来，我见，我征服", scores: {boss:3, ctrl:3, sexy:2} },
-      { text: "《活着》——活着就已经很好了", scores: {dead:3, malo:3, ojbk:2} },
-      { text: "《迷路》——我到底在哪？我去哪？我是谁？", scores: {imsb:3, thin:2, imfw:2} },
-      { text: "《笑着过》——哈哈哈哈哈人生嘛", scores: {hhhh:3, joker:3, lover:2} },
+      { text: '《征服》——我来，我见，我征服', scores: {boss:3, ctrl:3, sexy:2} },
+      { text: '《活着》——活着就已经很好了', scores: {dead:3, malo:3, ojbk:2} },
+      { text: '《迷路》——我到底在哪？我去哪？我是谁？', scores: {imsb:3, thin:2, imfw:2} },
+      { text: '《笑着过》——哈哈哈哈哈人生嘛', scores: {hhhh:3, joker:3, lover:2} },
     ]
   },
   {
-    text: "有人关心你「最近怎么样」，你的第一反应是？",
+    text: '有人关心你「最近怎么样」，你的第一反应是？',
     options: [
-      { text: "还好还好，一切正常，微笑回复", scores: {fake:3, ojbk:2, ctrl:2} },
-      { text: "啊，终于有人关心我了，打开话匣子", scores: {lover:3, mum:2, joker:2} },
-      { text: "……很差，但不想说，就说"还好"", scores: {solo:3, imsb:2, dead:2} },
-      { text: "怎么样，能怎么样，就那样呗", scores: {malo:3, shit:2, fuck:2} },
+      { text: '还好还好，一切正常，微笑回复', scores: {fake:3, ojbk:2, ctrl:2} },
+      { text: '啊，终于有人关心我了，打开话匣子', scores: {lover:3, mum:2, joker:2} },
+      { text: "……很差，但不想说，就说'还好'", scores: {solo:3, imsb:2, dead:2} },
+      { text: '怎么样，能怎么样，就那样呗', scores: {malo:3, shit:2, fuck:2} },
     ]
   },
 ];
@@ -957,7 +957,7 @@ const totalQ = QUESTIONS.length;
 // ══════════════════════════════════════════════════════
 function initStrip() {
   const chips = TYPES.map(t =>
-    `<div class="type-chip"><span class="code">${t.code}</span><span class="name">${t.name}</span></div>`
+    `<div class='type-chip'><span class='code'>${t.code}</span><span class='name'>${t.name}</span></div>`
   ).join('');
   const track = document.getElementById('typesTrack');
   // duplicate for seamless loop
@@ -1012,20 +1012,20 @@ function renderQuestion() {
 
   const optionsHTML = q.options.map((opt, i) => `
     <li>
-      <button class="option-btn${selectedIdx === i ? ' selected' : ''}"
-              onclick="selectOption(${i})"
-              aria-pressed="${selectedIdx === i}"
-              aria-label="选项${letters[i]}：${opt.text}">
-        <span class="opt-letter">${letters[i]}</span>
+      <button class='option-btn${selectedIdx === i ? ' selected' : ''}'
+              onclick='selectOption(${i})'
+              aria-pressed='${selectedIdx === i}'
+              aria-label='选项${letters[i]}：${opt.text}'>
+        <span class='opt-letter'>${letters[i]}</span>
         <span>${opt.text}</span>
       </button>
     </li>
   `).join('');
 
   document.getElementById('questionCard').innerHTML = `
-    <div class="q-number">第 ${currentQ + 1} 题 / ${totalQ}</div>
-    <div class="q-text">${q.text}</div>
-    <ul class="options-list" role="radiogroup" aria-label="请选择一个选项">${optionsHTML}</ul>
+    <div class='q-number'>第 ${currentQ + 1} 题 / ${totalQ}</div>
+    <div class='q-text'>${q.text}</div>
+    <ul class='options-list' role='radiogroup' aria-label='请选择一个选项'>${optionsHTML}</ul>
   `;
 }
 
@@ -1100,10 +1100,10 @@ function showResult() {
   dimsEl.innerHTML = DIM_LABELS.map((label, i) => {
     const raw = typeData.dims[i];
     return `
-      <div class="dim-card">
-        <div class="dim-label">${label}</div>
-        <div class="dim-value">${raw >= 80 ? '极高' : raw >= 60 ? '偏高' : raw >= 40 ? '中等' : '偏低'}</div>
-        <div class="dim-bar"><div class="dim-fill" style="width:${raw}%"></div></div>
+      <div class='dim-card'>
+        <div class='dim-label'>${label}</div>
+        <div class='dim-value'>${raw >= 80 ? '极高' : raw >= 60 ? '偏高' : raw >= 40 ? '中等' : '偏低'}</div>
+        <div class='dim-bar'><div class='dim-fill' style='width:${raw}%'></div></div>
       </div>
     `;
   }).join('');
